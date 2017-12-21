@@ -39,3 +39,9 @@ Login to DockerHub
 Publish it
 
     docker publish stefanbirkner/stack_master:<version>
+
+## Development
+
+Please check that the Dockerfile is correct by running
+
+    ./test.sh
