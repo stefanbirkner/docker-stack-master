@@ -1,5 +1,7 @@
 # Docker Image for StackMaster
 
+[![Build Status Linux](https://travis-ci.org/stefanbirkner/system-rules.svg?branch=master)](https://travis-ci.org/stefanbirkner/system-rules)
+
 This repository is used to build a Docker image that has
 [StackMaster](https://github.com/envato/stack_master) installed. The image is
 available from [DockerHub](https://hub.docker.com/) as
@@ -45,3 +47,7 @@ Publish it
 Please check that the Dockerfile is correct by running
 
     ./test.sh
+
+This project supports [Travis CI](https://travis-ci.org/) for continuous
+integration. Your pull request will be automatically built and tested by
+Travis CI.
