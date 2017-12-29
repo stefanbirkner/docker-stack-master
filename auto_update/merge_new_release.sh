@@ -1,11 +1,13 @@
 #!/bin/bash
 
-if [ "$TRAVIS_BRANCH" != "new_release" ]
-then 
-  exit 0;
-fi
+set -e
 
-git checkout master || exit
-git merge --ff-only new_release || exit
-git push origin master || exit
-git push origin :new_release || exit
+if [ "$TRAVIS_BRANCH" = "new_release" ]
+then
+  git fetch origin master
+  git fetch origin new_release
+  git checkout master
+  git merge --ff-only origin/new_release
+  git push origin master
+  git push origin :new_release
+fi
