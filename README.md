@@ -51,3 +51,30 @@ Please check that the Dockerfile is correct by running
 This project supports [Travis CI](https://travis-ci.org/) for continuous
 integration. Your pull request will be automatically built and tested by
 Travis CI.
+
+### Automatic update to new release
+
+This repository automates some steps that are needed for a Docker image of the
+latest StackMaster release.
+
+A branch with the name `new_release` is automatically merged to `master` by
+Travis CI if the tests are successful.
+
+#### Preparation
+
+There are several requirements for getting the automatic update process
+started.
+
+Travis CI needs permission to push to this repository. Therefore it needs a
+personal GitHub access token with the scope `public_repo`. There are two options
+for this token. Either you use your own GitHub account or you create a new
+GitHub account for Travis CI that has only access to this repository. I
+recommend the second option because AFAIK it is currently the only way to
+restrict a personal GitHub access token to a single repository. You create the
+token by opening the user's settings page, go to "Developer Settings", go to
+"Personal access tokens" and press the button "Generate new token". Give the
+token a description and select the scope `public_repo`. Now push the button
+"Generate token".
+
+Copy the token and add an environment variable `GITHUB_ACCESS_TOKEN` to the
+settings of the Travis CI job.
