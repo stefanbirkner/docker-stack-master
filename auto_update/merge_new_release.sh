@@ -4,6 +4,7 @@ set -e
 
 if [ "$TRAVIS_BRANCH" = "new_release" ]
 then
+  echo "sfb $TRAVIS_COMMIT"
   git fetch origin master
   git fetch origin new_release
   git checkout master
