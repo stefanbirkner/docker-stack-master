@@ -2,6 +2,7 @@
 
 set -e
 
+echo "new sfb"
 if [ "$TRAVIS_BRANCH" = "new_release" ]
 then
   echo "sfb $TRAVIS_COMMIT"
